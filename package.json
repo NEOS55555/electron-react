@@ -8,7 +8,8 @@
     "start": "NODE_ENV=development webpack-dev-server --config ./config/webpack.dev.js",
     "electron": "NODE_ENV=development electron .",
     "all": "npm start && electron .",
-    "build": "webpack --config ./config/webpack.prod.js"
+    "build": "webpack --config ./config/webpack.prod.js",
+    "packager": "NODE_ENV=production electron-packager ./ testapp --win --out ./outputs --overwrite"
   },
   "author": "",
   "license": "ISC",
@@ -26,10 +27,11 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
-    "webpack-merge": "^5.7.2"
+    "webpack-merge": "^5.7.2",
+    "electron": "^11.1.0",
+    "electron-packager": "^15.2.0"
   },
   "dependencies": {
-    "electron": "^11.1.0",
     "electron-squirrel-startup": "^1.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
