@@ -1,17 +1,15 @@
-//webpackage.config.js
 const webpack = require("webpack");
-// const electron = require('electron')
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin')
 // console.log(process.env.NODE_ENV)
 module.exports = {
-  entry: './src/index.js',
+  entry: './render/src/index.js',
   // 将 jsx 添加到默认扩展名中，省略 jsx
   resolve: {
     extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx'],
     alias: {
-      '@': path.resolve(__dirname, '../src'),
+      '@': path.resolve(__dirname, '../render/src'),
     },
   },
   module: {
@@ -60,7 +58,7 @@ module.exports = {
       }, {})
     }),
     new HtmlWebPackPlugin({
-      template: 'public/index.html',
+      template: 'render/public/index.html',
       filename: 'index.html',
       inject: true,
 
