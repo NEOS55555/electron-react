@@ -6,7 +6,7 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'cheap-module-source-map',
   devServer: {
-    contentBase: path.join(__dirname, './src/'),
+    contentBase: path.join(__dirname, '../render/src/'),
     publicPath: '/',
     host: '127.0.0.1',
     port: 3000,
