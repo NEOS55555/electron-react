@@ -51,6 +51,7 @@
     "mirror": "https://npm.taobao.org/mirrors/electron/"
   },
   "dependencies": {
+    "antd": "^4.9.4",
     "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^6.0.1",
     "electron-updater": "^4.3.5",
