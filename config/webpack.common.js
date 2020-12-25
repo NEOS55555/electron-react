@@ -1,15 +1,16 @@
 const webpack = require("webpack");
-const path = require('path');
+// const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { src, entry, defaultCss, templateHtml } = require('../constant')
 // const ExtractTextPlugin = require('extract-text-webpack-plugin')
 // console.log(process.env.NODE_ENV)
 module.exports = {
-  entry: path.resolve(__dirname, '../render/src/index.js'),
+  entry,
   // 将 jsx 添加到默认扩展名中，省略 jsx
   resolve: {
     extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx'],
     alias: {
-      '@': path.resolve(__dirname, '../render/src'),
+      '@': src
     },
   },
   module: {
@@ -43,7 +44,7 @@ module.exports = {
               // loader: require.resolve("sass-resources-loader"),
               loader: 'sass-resources-loader',
               options: {
-                  resources: path.resolve(__dirname, "../render/src/assets/css/default.scss") //这里是你自己放公共scss变量的路径
+                  resources: defaultCss //这里是你自己放公共scss变量的路径
               }
             },
           ]
@@ -58,7 +59,7 @@ module.exports = {
       }, {})
     }),
     new HtmlWebPackPlugin({
-      template: path.resolve(__dirname, '../render/public/index.html'),
+      template: templateHtml,
       filename: 'index.html',
       inject: true,
 

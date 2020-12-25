@@ -1,5 +1,6 @@
 const { app, BrowserWindow, Notification, Menu, MenuItem } = require('electron');
 
+const { dist, host, port } = require('../constant')
 
 const path = require('path');
 
@@ -32,9 +33,9 @@ const createWindow = () => {
   });
   console.log(process.env.NODE_ENV)
   if (process.env.NODE_ENV === 'development') {
-    mainWindow.loadURL('http://localhost:3000/');
+    mainWindow.loadURL(`http://${host}:${port}/`);
   } else {
-    mainWindow.loadFile(path.join(__dirname, '../dist/index.html'));
+    mainWindow.loadFile(path.join(__dirname, dist + '/index.html'));
   }
   // and load the index.html of the app.
   // mainWindow.loadFile(path.join(__dirname, 'index.html'));
